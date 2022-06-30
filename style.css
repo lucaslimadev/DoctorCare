@@ -276,7 +276,7 @@ body.menu-expanded button path {
 #home::before {
     content: "";
     width: 100%;
-    height: calc(108rem + var(--nav-height));
+    height: calc(70% + var(--nav-height));
     background-color: var(--brand-light);
     display: block;
 
@@ -446,12 +446,17 @@ footer .social-links {
 /*=== RESPONSIVE ==================================*/
 @media (min-width: 1024px) {
 
-    /*=== GERAL =============*/
+    /*=== GERAL =====================*/
+    body {
+        overflow: auto;
+    }
+
     .wrapper {
         width: min(112rem, 100%);
+        display: grid;
     }
-    /*=== NAVIGATION ========*/
 
+    /*=== NAVIGATION ================*/
     /* Reset */
     nav#navigation .wrapper * {
         margin: 0;
@@ -510,13 +515,13 @@ footer .social-links {
     nav#navigation .menu a.button:hover {
         background-color: var(--primary-color);
         color: #FFFFFF;
-        border: 0;
+        border: none;
         transition: background color 280ms;
     }
 
     nav#navigation.scroll .menu ul li a {
-        color: var(--bg-light);
-        opacity: 0.9;
+        color: var(--brand-light);
+        opacity: 0.8;
     }
 
     nav#navigation.scroll .menu a.button {
@@ -528,6 +533,7 @@ footer .social-links {
         transition: opacity 0.4s;
     }
 
+    nav#navigation .menu li a.active,
     nav#navigation .menu li a:hover {
         opacity: 1;
         font-weight: 700;
@@ -557,9 +563,73 @@ footer .social-links {
         width: 100%;
     }
 
+    nav#navigation.scroll .menu li a.active,
+    nav#navigation.scroll .menu li a:hover {
+        opacity: 1;
+    }
+
+    nav#navigation.scroll .menu a.button.active,
     nav#navigation.scroll .menu a.button:hover {
         background-color: var(--primary-color);
         filter: brightness(1.3);
         border: none;
+    }
+
+    /*=== HOME ================*/
+    #home::before {
+        height: calc(86% - var(--nav-height));
+    }
+
+    #home {
+        padding-top: var(--nav-height);
+    }
+
+    #home .wrapper {
+        grid-template-columns: 60.5rem 1fr;
+        grid-template-areas: 
+        'A B'
+        'C C';
+    }
+
+    #home .col-a {
+        grid-area: A;
+        text-align: left;
+        align-self: center;
+    }
+
+    #home h1 {
+        font-size: 5.2rem;
+    }
+
+    #home .content p {
+        font-size: 1.8rem;
+    }
+
+    #home .col-b {
+        grid-area: B;
+    }
+
+    #home .stats {
+        grid-area: C;
+
+        flex-direction: row;
+        padding: 6rem;
+        gap: 0;
+    }
+
+    #home .stats .stat + .stat {
+        border-left: 1px solid var(--primary-color);
+    }
+
+    #home .stats .stat {
+        flex: 1;
+    }
+
+    #home .button-whatsapp {
+        margin: 0;
+    }
+
+    #home img {
+        width: 42rem;
     }
 }

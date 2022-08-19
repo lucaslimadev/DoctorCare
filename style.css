@@ -8,14 +8,15 @@
 }
 
 :root {
-    --primary-color: hsl(170, 100%, 26%);
+    --hue: 209;
+    --primary-color: hsl(209, 77%, 43%);
     --headline: hsl(210, 11%, 15%);
     --paragraph: hsl(210, 9%, 31%);
 
-    --brand-beige: hsl(39, 100%, 97%);
-    --brand-light: hsl(148, 23%, 89%);
+    --brand-beige: hsl(204, 100%, 97%);
+    --brand-light: hsl(206, 100%, 91%);
     --bg-light: hsl(180, 14%, 97%);
-    --button-green-dark-hover: hsl(170, 100%, 14%);
+    --brand-dark: hsl(209, 85%, 25%);
 
     font-size: 62.5%; /* 1rem = 10px */
 
@@ -116,7 +117,7 @@ section .content p {
 }
 
 .button-whatsapp:hover {
-    background-color: var(--button-green-dark-hover);
+    background-color: var(--brand-dark);
 }
 
 .social-links {
@@ -355,6 +356,77 @@ body.menu-expanded button path {
     margin-block: 1.6rem;
 }
 
+
+/*=== DEPOSITIONS==================================*/
+#depoimentos header h2 {
+    margin-bottom: 6rem;
+}
+
+#depoimentos .cards {
+    display: flex;
+    gap: 4rem;
+}
+
+#depoimentos .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 3.2rem;
+
+    background-color: #F0F9FF;
+    color: #495057;
+
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#depoimentos .cards p {
+    padding: 2rem 0;
+    text-align: start;
+}
+
+#depoimentos .card-description {
+    display: flex;
+    gap: 1.6rem;
+    justify-content: flex-start;
+    align-items: center;
+
+    color: #1971C2;
+    font-weight: 700;
+}
+
+/*=== COMPANIES ==================================*/
+#companies h3 {
+    margin-top: 10rem;
+}
+
+#companies .card-companies {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 5rem;
+}
+
+/*=== BANNER ==================================*/
+#banner {
+    display: flex;
+    gap: 8rem;
+    align-items: center;
+
+    margin-top: 15rem;
+    background-color: #1971C2;
+    color: #FFFFFF;
+
+    font-size: 3rem;
+    font-weight: bold;
+
+    padding: 6rem 12rem;
+    border-radius: 10px;
+
+    text-align: start;
+}
+
+
 /*=== ABOUT ==================================*/
 #about {
     text-align: left;
@@ -424,6 +496,7 @@ footer p {
 footer .social-links {
     justify-content: flex-start;
 }
+
 
 /*=== BACK TO TOP ==================================*/
 #backToTopButton {
